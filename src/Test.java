@@ -1,8 +1,8 @@
-import java.io.File;
+import java.io.InputStream;
 import java.util.Scanner;
 
 public class Test {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws ClassNotFoundException {
         System.out.println("请输入用户名：");
         //user1	111
         //user2	user222222
@@ -18,9 +18,10 @@ public class Test {
             String password=sc.next();
             System.out.println("你输入的密码"+password);
 
-            File file = new File("G:\\Lanqiao\\ConsoleShop\\src\\list.xlsx");
+            //File file = new File("G:\\Lanqiao\\ConsoleShop\\src\\list.xlsx");
+            InputStream in = Class.forName("Test").getResourceAsStream("/list.xlsx");
             ReadExcel readExcel = new ReadExcel();
-            User users[] = readExcel.readExcel(file);
+            User users[] = readExcel.readExcel(in);
             for(int i=0;i<users.length;i++)
             {
                 if(username.equals(users[i].getUsername())&&password.equals(users[i].getPassword()))
