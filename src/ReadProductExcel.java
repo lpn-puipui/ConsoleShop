@@ -9,7 +9,7 @@ import java.io.InputStream;
 import java.text.DecimalFormat;
 
 public class ReadProductExcel {
-    public Product[] readExcel(InputStream in) {
+    public Product[] getALLProduct(InputStream in) {
         Product products[] = null;
         try {
             XSSFWorkbook xw = new XSSFWorkbook(in);
