@@ -37,6 +37,20 @@ public class Test {
                         System.out.print("\t" + product.getPrice());
                         System.out.println("\t" + product.getDesc());
                     }
+                    /*
+                    选择商品ID
+                     */
+                    System.out.println("请输入商品ID把该商品加入购物车");
+                    String pId = sc.next();
+                    int count = 0;
+                    /*
+                    创建一个购物车的数组：存的是商品，根据此ID去Excel中去查找是否有该ID的商品信息，如果有则返回该商品即可
+                     */
+                    Product carts[] = new Product[3];
+                    inProduct = null;
+                    inProduct = Class.forName("Test").getResourceAsStream("/product.xlsx");
+                    Product product = readProductExcel.getProductById(pId, inProduct);
+                    System.out.println("要购买的商品价格：" + product.getPrice());
                     break;
                 }else {
                     System.out.println("登录失败,请重新登录");
