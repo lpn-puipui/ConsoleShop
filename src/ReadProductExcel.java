@@ -9,8 +9,10 @@ import java.io.InputStream;
 import java.text.DecimalFormat;
 
 public class ReadProductExcel {
-    public Product[] getALLProduct(InputStream in) {
+    public Product[] getALLProduct(InputStream in) throws ClassNotFoundException {
         Product products[] = null;
+        in = null;
+        in = Class.forName("Test").getResourceAsStream("/product.xlsx");
         try {
             XSSFWorkbook xw = new XSSFWorkbook(in);
             XSSFSheet xs = xw.getSheetAt(0);
