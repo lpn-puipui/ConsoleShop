@@ -4,6 +4,7 @@ import java.util.Scanner;
 public class Test {
     static Scanner sc = new Scanner(System.in);
     static Product carts[] = new Product[3];
+    static int count = 0;
     public static void main(String[] args) throws ClassNotFoundException {
         //user1	111
         //user2	user222222
@@ -79,7 +80,7 @@ public class Test {
          */
         System.out.println("请输入商品ID把该商品加入购物车");
         String pId = sc.next();
-        int count = 0;
+        //int count = 0;
         /*
         创建一个购物车的数组：存的是商品，根据此ID去Excel中去查找是否有该ID的商品信息，如果有则返回该商品即可
          */
