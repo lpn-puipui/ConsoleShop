@@ -41,6 +41,20 @@ public class Test {
                             shopping(inProduct);
                         }else if(choose == 2){
                             ShowCarts();
+                        }else if(choose == 3){
+                            Order order = new Order();
+                            order.setUser(users[i]);//订单关联用户
+                            //订单关联商品
+                            Product products[] = new Product[count];
+
+                            for(int j=0;j<carts.length;j++){
+                                if(carts[j]!=null){
+                                    products[j]=carts[j];
+                                }
+                            }
+                            order.setProducts(products);
+                            //下订单
+                            CreateOrder.createOrder(order);
                         }else if(choose == 4){
                             System.out.println("安全退出");
                             break;
@@ -81,6 +95,7 @@ public class Test {
         System.out.println("请输入商品ID把该商品加入购物车");
         String pId = sc.next();
         //int count = 0;
+        //改为全局变量
         /*
         创建一个购物车的数组：存的是商品，根据此ID去Excel中去查找是否有该ID的商品信息，如果有则返回该商品即可
          */
