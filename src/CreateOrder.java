@@ -46,7 +46,7 @@ public class CreateOrder {
                         cell.setCellValue(order.getUser().getUsername());
                     } else if (j == 1) {
                         cell.setCellValue(order.getProducts()[i].getId());
-                    }else if (j == 6){
+                    }else if (j == 5){
                         SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");//设置日期格式
                         //System.out.println(df.format(new Date()));// new Date()为获取当前系统时间
                         cell.setCellValue(df.format(new Date()));
